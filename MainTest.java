@@ -6,12 +6,10 @@ public class MainTest {
 
     @Test
     public void multiplicationTest() {
-        assertEquals(4, Main.multiplication(2, 2));
-        assertEquals(-4, Main.multiplication(-2, 2));
-        assertEquals(-4, Main.multiplication(2, -2));
-        assertEquals(4, Main.multiplication(-2, -2));
-        assertEquals(0, Main.multiplication(0, 2));
-        assertEquals(0, Main.multiplication(2, 0));
-        assertEquals(0, Main.multiplication(0, 0));
+        int[] testData = {2, 2, -2, 2, 2, -2, -2, -2, 0, 2, 2, 0, 0, 0};
+        int[] testResult = {4, -4, -4, 4, 0, 0, 0};
+        for (int i = 0; i < testResult.length; i++) {
+            assertEquals(testResult[i], Main.multiplication(testData[i * 2], testData[i * 2 + 1]));
+        }
     }
 }
